@@ -1,0 +1,3 @@
+"""Module definition for Bazel dependencies."""
+
+bazel_dep(name = "googletest", version = "1.15.2")

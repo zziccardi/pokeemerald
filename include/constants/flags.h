@@ -1,8 +1,8 @@
 #ifndef GUARD_CONSTANTS_FLAGS_H
 #define GUARD_CONSTANTS_FLAGS_H
 
-#include "constants/opponents.h"
-#include "constants/rematches.h"
+#include "include/constants/opponents.h"
+#include "include/constants/rematches.h"
 
 // Temporary Flags
 // These temporary flags are are cleared every time a map is loaded. They are used

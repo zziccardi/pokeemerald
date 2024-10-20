@@ -13,7 +13,7 @@ class MainTest : public testing::Test {
   }
 };
 
-TEST_F(MainTest, RunGameLoopIteration) {
+TEST_F(MainTest, TestRunGameLoopIteration) {
   // TODO
 }
 

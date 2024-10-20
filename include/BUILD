@@ -1,5 +1,6 @@
 cc_library(
-    name = "includes",
+    name = "include",
     hdrs = glob(["*.h"]),
-    visibility = ["//visibility:public"],
+    includes = ["."],
+    visibility = ["//src:__pkg__"],
 )

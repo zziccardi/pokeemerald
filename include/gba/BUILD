@@ -6,6 +6,7 @@ cc_library(
         "gba.h",
         "io_reg.h",
         "isagbprint.h",
+        "m4a_internal.h",
         "macro.h",
         "multiboot.h",
         "syscall.h",

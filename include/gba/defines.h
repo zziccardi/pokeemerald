@@ -6,9 +6,10 @@
 #define TRUE  1
 #define FALSE 0
 
-#define IWRAM_DATA __attribute__((section("iwram_data")))
-#define EWRAM_DATA __attribute__((section("ewram_data")))
-#define COMMON_DATA __attribute__((section("common_data")))
+// https://llvm.org/doxygen/MCSectionMachO_8cpp_source.html
+#define IWRAM_DATA __attribute__((section(".iwram_data,iwram_data")))
+#define EWRAM_DATA __attribute__((section(".ewram_data,ewram_data")))
+#define COMMON_DATA __attribute__((section(".common_data,common_data")))
 #define UNUSED __attribute__((unused))
 
 #if MODERN

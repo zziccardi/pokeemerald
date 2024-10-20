@@ -54,11 +54,12 @@
 
 #define CpuFastCopy(src, dest, size) CpuFastSet(src, dest, ((size)/(32/8) & 0x1FFFFF))
 
+// First cast to same size as pointer (size_t), then to desired (smaller) type.
 #define DmaSetUnchecked(dmaNum, src, dest, control) \
 {                                                 \
     vu32 *dmaRegs = (vu32 *)REG_ADDR_DMA##dmaNum; \
-    dmaRegs[0] = (vu32)(src);                     \
-    dmaRegs[1] = (vu32)(dest);                    \
+    dmaRegs[0] = (vu32)(size_t)(src);             \
+    dmaRegs[1] = (vu32)(size_t)(dest);            \
     dmaRegs[2] = (vu32)(control);                 \
     dmaRegs[2];                                   \
 }

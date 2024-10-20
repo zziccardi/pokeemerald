@@ -7,7 +7,7 @@ cc_test(
     name = "main_test",
     srcs = ["main_test.cc"],
     deps = [
-        "//src:main",
+        "//src:all",
         "@googletest//:gtest",
         "@googletest//:gtest_main",
     ],

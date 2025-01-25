@@ -1,6 +1,6 @@
 cc_library(
-    name = "constants",
-    hdrs = glob(["*.h"]),
+    name = "data",
+    hdrs = glob(["*.h", "**/*.h"]),
     includes = ["."],
     visibility = ["//visibility:public"],
 )

@@ -1,8 +1,11 @@
+#include "gba/types.h"  // Keep first
 #include "global.h"
-#include "gba/types.h"
+#include "constants/rgb.h"
+#include "link.h"
+
+#ifndef TESTING
 #include "crt0.h"
 #include "malloc.h"
-#include "link.h"
 #include "link_rfu.h"
 #include "librfu.h"
 #include "m4a.h"
@@ -22,9 +25,10 @@
 #include "battle_controllers.h"
 #include "text.h"
 #include "intro.h"
-#include "main.h"
 #include "trainer_hill.h"
-#include "constants/rgb.h"
+#endif  // TESTING
+
+#include "main.h"
 
 static void VBlankIntr(void);
 static void HBlankIntr(void);
@@ -126,6 +130,7 @@ static void RunGameLoopIteration() {
     WaitForVBlank();
 }
 
+#ifndef TESTING
 void AgbMain()
 {
     // Modern compilers are liberal with the stack on entry to this function,
@@ -172,6 +177,7 @@ void AgbMain()
         RunGameLoopIteration();
     }
 }
+#endif  // TESTING
 
 static void UpdateLinkAndCallCallbacks(void)
 {
